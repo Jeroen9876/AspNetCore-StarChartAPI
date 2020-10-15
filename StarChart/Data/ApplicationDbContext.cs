@@ -1,11 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Security.Cryptography.X509Certificates;
+using Microsoft.EntityFrameworkCore;
+using StarChart.Models;
 
 namespace StarChart.Data
 {
     public class ApplicationDbContext : DbContext
     {
+        public DbSet<CelestialObject> CelestialObjects { get; set; }
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
+            
         }
     }
 }
